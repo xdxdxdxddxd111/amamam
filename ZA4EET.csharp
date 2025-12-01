@@ -1,0 +1,97 @@
+using System;
+using System.ComponentModel.Design;
+
+class Program
+{
+    static void Main()
+    {
+        int num1;
+        int num2;
+        char sym;
+
+        Console.Write("Enter first number: ");
+        Int32.TryParse(Console.ReadLine(), out num1);
+        Console.Write("Enter second number: ");
+        Int32.TryParse(Console.ReadLine(), out num2);
+        Console.Write("Enter some sym: ");
+        char.TryParse(Console.ReadLine(), out sym);
+        if (sym == '/')
+        {
+            if (num2 == 0)
+            {
+                Console.WriteLine("Error");
+            }
+            else
+            {
+                Console.WriteLine(num1 / num2);
+            }
+        }
+        else if (sym == '*')
+        {
+            Console.WriteLine(num1 * num2);
+        }
+        else if (sym == '+')
+        {
+            Console.WriteLine(num1 + num2);
+        }
+        else if (sym == '-')
+        {
+            Console.WriteLine(num1 - num2);
+        }
+
+        double c4et;
+        double procent;
+
+        Console.Write("Enter c4et: ");
+        double.TryParse(Console.ReadLine(), out c4et);
+        Console.Write("Enter procent: ");
+        double.TryParse(Console.ReadLine(), out procent);
+        if (procent == 0)
+        {
+            Console.WriteLine(c4et);
+        }
+        else
+        {
+            Console.WriteLine(c4et + c4et * (procent / 100));
+        }
+
+    }
+}
+
+
+
+
+using System;
+using System.ComponentModel.Design;
+
+class Program
+{
+    static void Main()
+    {
+        int[] siv = new int[10];
+        Random rand = new Random();
+
+        for (int i = 0; i < siv.Length; i++)
+        {
+            siv[i] = rand.Next(-50, 51);
+        }
+
+        int max = siv[0];
+        int min = siv[0];
+        int sum = 0;
+
+        for (int i = 0; i < siv.Length; i++)
+        {
+            if (siv[i] > max) max = siv[i];
+
+            if (siv[i] < min) min = siv[i];
+            sum += siv[i];
+        }
+
+        Console.WriteLine("Massive: " + string.Join(", ", siv));
+
+        Console.WriteLine("Max zna4: " + max);
+        Console.WriteLine("Min zna4: " + min);
+        Console.WriteLine("Summ elements: " + sum);
+    }
+}
